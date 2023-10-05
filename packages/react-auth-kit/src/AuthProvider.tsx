@@ -22,8 +22,8 @@ const AuthProvider: React.FunctionComponent<AuthProviderProps> =
     children,
     authType,
     authName,
-    cookieDomain,
-    cookieSecure,
+    cookieDomain = window?.location.hostname,
+    cookieSecure = window?.location.protocol === 'https',
     refresh,
   }) => {
     if (authType === 'cookie') {
